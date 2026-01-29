@@ -1,0 +1,56 @@
+{
+  "name": "create-blink-app",
+  "version": "0.1.0",
+  "description": "Create a new Blink CMS project - Notion + Convex + Next.js",
+  "keywords": [
+    "blink",
+    "cms",
+    "notion",
+    "convex",
+    "nextjs",
+    "portfolio",
+    "create-app",
+    "cli"
+  ],
+  "author": "Sahar Barak <sahar.h.barak@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SaharBarak/create-blink-app.git"
+  },
+  "homepage": "https://blink.dev",
+  "bugs": {
+    "url": "https://github.com/SaharBarak/create-blink-app/issues"
+  },
+  "type": "module",
+  "bin": {
+    "create-blink-app": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "template"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node dist/index.js --help"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.10.2",
+    "@types/prompts": "^2.4.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
